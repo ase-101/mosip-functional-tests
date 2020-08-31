@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
+import io.mosip.kernel.util.KernelDataBaseAccess;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -111,7 +111,6 @@ public class BaseTestCase {
 	}
 
 	public static void initialize() {
-		copyDbInTarget();
 		PropertyConfigurator.configure(getLoggerPropertyConfig());
 		kernelAuthLib = new KernelAuthentication();
 		kernelCmnLib = new CommonLibrary();
